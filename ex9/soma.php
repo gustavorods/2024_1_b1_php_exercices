@@ -12,8 +12,19 @@
     $fim = $_POST["fim"];
 
     $soma_impares = 0;
+    $maiorNumero = 0;
+    $menorNumero = 0;
 
-    for ($i = $inicio; $i <= $fim; $i++) {
+    // Fazendo a verificação de maior número
+    if($inicio > $fim) {
+        $maiorNumero = $inicio;
+        $menorNumero = $fim;
+    } else {
+        $maiorNumero = $fim;
+        $menorNumero = $inicio;
+    }
+
+    for ($i = $menorNumero; $i <= $maiorNumero; $i++) {
         if ($i % 2 != 0) {
             $soma_impares += $i;
         }
